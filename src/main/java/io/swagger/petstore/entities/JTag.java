@@ -1,13 +1,9 @@
 package io.swagger.petstore.entities;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class JTag {
 
-	@JsonProperty("name")
 	private String name;
 
-	@JsonProperty("id")
 	private int id;
 
 	public void setName(String name){

@@ -15,7 +15,8 @@ public class JPetActions {
     public JPetActions() {
         requestSpecification = new RequestSpecBuilder()
                 .addHeader("api_key", "1qa2ws3ed4rfvcxz")
-                .setBaseUri("http://petstore.swagger.io/v2")
+                .setBaseUri("http://petstore.swagger.io")
+                .setBasePath("/v2/pet")
                 .setContentType(ContentType.JSON)
                 .log(LogDetail.ALL).build();
     }
@@ -25,4 +26,5 @@ public class JPetActions {
                     .body(petRequest)
                     .post("/pet").as(JPet.class);
     }
+
 }
