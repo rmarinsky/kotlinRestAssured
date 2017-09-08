@@ -1,11 +1,11 @@
 package io.swagger.petstore
 
-import io.swagger.petstore.entities.KPet
+import io.swagger.petstore.kEntities.KPet
 import org.apache.commons.lang3.RandomStringUtils
 import org.junit.Assert
 import org.junit.Test
 
-class KPetTestsObjectStyle {
+class KPetTestsInObjectStyle {
 
     @Test fun `Add new pet to store test`(){
         val testPet = KPet(id = RandomStringUtils.randomNumeric(10), name = "Pet_${RandomStringUtils.randomAlphabetic(8)}", status = "available")

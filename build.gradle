@@ -12,6 +12,27 @@ buildscript {
     }
 }
 
+//Generator for asserts
+//Comment all this block if you rewrite some part of generated any class
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "gradle.plugin.com.github.opengl-8080:assertjGen-gradle-plugin:1.1.4"
+    }
+}
+
+apply plugin: "com.github.opengl-BOBO.assertjGen"
+
+assertjGen {
+    classOrPackageNames = ['io.swagger.petstore.jEntities'] //package path for converting it to following outputDir
+    outputDir = 'src/main/java/io/swagger/petstore/asserts' //dir were will be located assertions for entities class
+    cleanOnlyFiles = true
+}
+
 apply plugin: 'kotlin'
 apply plugin: 'idea'
 
@@ -24,6 +45,7 @@ ext {
     restAssuredVer = '3.0.3'
     jacksonVer = '2.9.0'
     kluentVer = '1.28'
+    assertjVer = "3.8.0"
 }
 
 dependencies {
@@ -34,7 +56,8 @@ dependencies {
             "io.rest-assured:rest-assured:${restAssuredVer}",
             "com.fasterxml.jackson.module:jackson-module-kotlin:${jacksonVer}",
             "com.fasterxml.jackson.core:jackson-core:${jacksonVer}",
-            "org.amshove.kluent:kluent:${kluentVer}"
+            "org.amshove.kluent:kluent:${kluentVer}",
+            "org.assertj:assertj-core:${assertjVer}"
     )
 }
 

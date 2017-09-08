@@ -5,8 +5,8 @@ import io.restassured.builder.RequestSpecBuilder
 import io.restassured.filter.log.LogDetail
 import io.restassured.http.ContentType
 import io.restassured.specification.RequestSpecification
-import io.swagger.petstore.entities.KMessageResopnse
-import io.swagger.petstore.entities.KPet
+import io.swagger.petstore.kEntities.KMessageResopnse
+import io.swagger.petstore.kEntities.KPet
 import utils.As
 
 class KPetActions {

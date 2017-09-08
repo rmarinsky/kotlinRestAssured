@@ -4,8 +4,8 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
-import io.swagger.petstore.entities.JMessageResponse;
-import io.swagger.petstore.entities.JPet;
+import io.swagger.petstore.jEntities.JMessageResponse;
+import io.swagger.petstore.jEntities.JPet;
 
 import static io.restassured.RestAssured.given;
 
@@ -33,7 +33,7 @@ class JPetActions {
                 .delete(pet.getId());
     }
 
-    public JMessageResponse getAbsentPet(JPet pet) {
+    JMessageResponse getAbsentPet(JPet pet) {
         return given(requestSpecification)
                 .get(pet.getId())
                 .then()

@@ -1,6 +1,6 @@
 package io.swagger.petstore
 
-import io.swagger.petstore.entities.KPet
+import io.swagger.petstore.kEntities.KPet
 import org.amshove.kluent.shouldEqual
 import org.apache.commons.lang3.RandomStringUtils
 import org.junit.Test

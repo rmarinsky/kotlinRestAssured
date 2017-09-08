@@ -1,4 +1,4 @@
-package io.swagger.petstore.entities;
+package io.swagger.petstore.jEntities;
 
 public class JMessageResponse{
 	private int code;

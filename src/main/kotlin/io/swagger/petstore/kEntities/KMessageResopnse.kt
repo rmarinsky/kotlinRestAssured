@@ -1,4 +1,4 @@
-package io.swagger.petstore.entities
+package io.swagger.petstore.kEntities
 
 data class KMessageResopnse(
 	val code: Int? = null,
