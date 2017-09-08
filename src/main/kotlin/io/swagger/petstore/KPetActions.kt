@@ -33,11 +33,11 @@ class KPetActions {
                 .delete(pet.id)
     }
 
-    fun petIsAbsent(pet: KPet): Boolean {
+    fun getAbsentPet(pet: KPet): KMessageResopnse {
         return RestAssured.given(requestSpecification)
                 .get(pet.id)
-                .then().extract().body().As<KMessageResopnse>()
-                .message.equals("Pet not found")
+                .then()
+                .extract().body().As()
     }
 
 }

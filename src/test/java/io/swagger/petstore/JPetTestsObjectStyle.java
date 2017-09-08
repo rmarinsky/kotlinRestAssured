@@ -5,10 +5,10 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class JPetTestsWithLibrary {
+public class JPetTestsObjectStyle {
 
     @Test
-    public void addNewPet() {
+    public void addNewPetToStoreTest() {
         JPet testPet = new JPet(null, "Pet_" + RandomStringUtils.randomAlphabetic(8), RandomStringUtils.randomNumeric(8), null, null, "available");
 
         JPet petResponse = new JPetActions().addNewPet(testPet);
@@ -16,13 +16,14 @@ public class JPetTestsWithLibrary {
     }
 
     @Test
-    public void deletePetById(){
+    public void deletePetFromStoreTest(){
         JPet testPet = new JPet(null, "Pet_" + RandomStringUtils.randomAlphabetic(8), RandomStringUtils.randomNumeric(8), null, null, "available");
         JPetActions petAction = new JPetActions();
 
         petAction.addNewPet(testPet);
         petAction.deletePet(testPet);
-        Assert.assertTrue(petAction.petIsAbsent(testPet));
+
+        Assert.assertTrue(petAction.getAbsentPet(testPet).getMessage().equals("Pet not found"));
     }
 
 }

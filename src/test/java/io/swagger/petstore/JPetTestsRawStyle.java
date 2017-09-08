@@ -6,13 +6,13 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 
-public class JPetTests {
+public class JPetTestsRawStyle {
 
     private String BASE_URL = "http://petstore.swagger.io/v2";
 
 
     @Test
-    public void test(){
+    public void addNewPetToStoreTest(){
         String testPetId = "898988888", testPetName = "MyLittlePet";
         given()
                 .baseUri(BASE_URL)

@@ -33,12 +33,11 @@ class JPetActions {
                 .delete(pet.getId());
     }
 
-    public boolean petIsAbsent(JPet pet) {
+    public JMessageResponse getAbsentPet(JPet pet) {
         return given(requestSpecification)
                 .get(pet.getId())
                 .then()
-                .extract().body().as(JMessageResponse.class)
-                .getMessage().equals("Pet not found");
+                .extract().body().as(JMessageResponse.class);
     }
 
 }
