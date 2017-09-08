@@ -1,6 +1,7 @@
 package io.swagger.petstore.entities;
 
 import java.util.List;
+import java.util.Objects;
 
 public class JPet{
 
@@ -75,6 +76,23 @@ public class JPet{
 
 	public String getStatus(){
 		return status;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		JPet pet = (JPet) o;
+		return Objects.equals(this.id, pet.id) &&
+				Objects.equals(this.category, pet.category) &&
+				Objects.equals(this.name, pet.name) &&
+				Objects.equals(this.photoUrls, pet.photoUrls) &&
+				Objects.equals(this.tags, pet.tags) &&
+				Objects.equals(this.status, pet.status);
 	}
 
 	@Override

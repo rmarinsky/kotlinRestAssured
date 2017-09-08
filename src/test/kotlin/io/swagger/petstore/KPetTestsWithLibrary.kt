@@ -9,21 +9,21 @@ class KPetTestsWithLibrary{
 
     @Test
     fun addNewPetTest(){
-        val randomPet = KPet(id = RandomStringUtils.randomNumeric(10), name = "Pet_${RandomStringUtils.randomAlphabetic(8)}", status = "available")
+        val testPet = KPet(id = RandomStringUtils.randomNumeric(10), name = "Pet_${RandomStringUtils.randomAlphabetic(8)}", status = "available")
 
-        val petResponse = KPetActions().addNewPet(randomPet)
+        val petResponse = KPetActions().addNewPet(testPet)
 
-        Assert.assertEquals(randomPet, petResponse)
+        Assert.assertEquals(testPet, petResponse)
     }
 
     @Test fun deletePet(){
-        val randomPet = KPet(id = RandomStringUtils.randomNumeric(10), name = "Pet_${RandomStringUtils.randomAlphabetic(8)}", status = "available")
+        val testPet = KPet(id = RandomStringUtils.randomNumeric(10), name = "Pet_${RandomStringUtils.randomAlphabetic(8)}", status = "available")
         val petAction = KPetActions()
 
-        petAction.addNewPet(randomPet)
-        petAction.deletePet(randomPet)
+        petAction.addNewPet(testPet)
+        petAction.deletePet(testPet)
 
-        Assert.assertTrue(KPetActions().petIsAbsent(randomPet))
+        Assert.assertTrue(KPetActions().petIsAbsent(testPet))
     }
 
 }

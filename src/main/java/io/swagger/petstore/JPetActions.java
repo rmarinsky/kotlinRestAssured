@@ -4,15 +4,16 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
+import io.swagger.petstore.entities.JMessageResponse;
 import io.swagger.petstore.entities.JPet;
 
 import static io.restassured.RestAssured.given;
 
-public class JPetActions {
+class JPetActions {
 
     private RequestSpecification requestSpecification;
 
-    public JPetActions() {
+    JPetActions() {
         requestSpecification = new RequestSpecBuilder()
                 .addHeader("api_key", "1qa2ws3ed4rfvcxz")
                 .setBaseUri("http://petstore.swagger.io")
@@ -21,10 +22,23 @@ public class JPetActions {
                 .log(LogDetail.ALL).build();
     }
 
-    public JPet addNewPet(JPet petRequest) {
+    JPet addNewPet(JPet petRequest) {
             return given(requestSpecification)
                     .body(petRequest)
-                    .post("/pet").as(JPet.class);
+                    .post().as(JPet.class);
+    }
+
+    void deletePet(JPet pet) {
+        given(requestSpecification)
+                .delete(pet.getId());
+    }
+
+    public boolean petIsAbsent(JPet pet) {
+        return given(requestSpecification)
+                .get(pet.getId())
+                .then()
+                .extract().body().as(JMessageResponse.class)
+                .getMessage().equals("Pet not found");
     }
 
 }
