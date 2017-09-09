@@ -1,5 +1,6 @@
 package io.swagger.petstore;
 
+import io.swagger.petstore.jEntities.JMessageResponse;
 import io.swagger.petstore.jEntities.JPet;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Assert;
@@ -31,7 +32,9 @@ public class JPetTestsInObjectStyle {
         petAction.addNewPet(testPet);
         petAction.deletePet(testPet);
 
-        Assert.assertTrue(petAction.getAbsentPet(testPet).getMessage().equals("Pet not found"));
+        JMessageResponse messageResponse = petAction.getAbsentPet(testPet);
+
+        Assert.assertTrue(messageResponse.getMessage().equals("Pet not found"));
     }
 
 }
