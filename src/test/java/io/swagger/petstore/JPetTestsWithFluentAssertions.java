@@ -11,7 +11,11 @@ public class JPetTestsWithFluentAssertions {
 
     @Test
     public void addNewPetToStoreTest() {
-        JPet testPet = new JPet(null, "Pet_" + RandomStringUtils.randomAlphabetic(8), RandomStringUtils.randomNumeric(8), null, null, "available");
+        JPet testPet = new JPet(null,
+                "Pet_" + RandomStringUtils.randomAlphabetic(8), //Pet name
+                RandomStringUtils.randomNumeric(8), //Pet ID
+                null, null,
+                "available"); //Pet status
 
         JPet petResponse = new JPetActions().addNewPet(testPet);
 
@@ -20,7 +24,11 @@ public class JPetTestsWithFluentAssertions {
 
     @Test
     public void deletePetFromStoreTest() {
-        JPet testPet = new JPet(null, "Pet_" + RandomStringUtils.randomAlphabetic(8), RandomStringUtils.randomNumeric(8), null, null, "available");
+        JPet testPet = new JPet(null,
+                "Pet_" + RandomStringUtils.randomAlphabetic(8), //Pet name
+                RandomStringUtils.randomNumeric(8), null, null, //Pet ID
+                "available"); //Pet status
+
         JPetActions petAction = new JPetActions();
 
         petAction.addNewPet(testPet);
