@@ -7,7 +7,7 @@ import org.junit.Test
 
 class KPetTestsWithFluentAssertions {
 
-    @Test fun `Add new pet to store`(){
+    @Test fun `Add new pet to store`() {
         val testPet = KPet(id = RandomStringUtils.randomNumeric(10), name = "Pet_${RandomStringUtils.randomAlphabetic(8)}", status = "available")
 
         val petResponse = KPetActions().addNewPet(testPet)
@@ -15,10 +15,11 @@ class KPetTestsWithFluentAssertions {
         testPet shouldEqual petResponse
     }
 
-    @Test fun `Delete pet from store test`(){
+    @Test fun `Delete pet from store test`() {
         val testPet = KPet(id = RandomStringUtils.randomNumeric(10), name = "Pet_${RandomStringUtils.randomAlphabetic(8)}", status = "available")
 
-        with(KPetActions()) { //with instance of KPetActions class call following methods:
+        with(KPetActions()) {
+            //with instance of KPetActions class call following methods:
             addNewPet(testPet)
             deletePet(testPet)
 

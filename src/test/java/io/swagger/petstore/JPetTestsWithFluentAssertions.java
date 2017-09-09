@@ -19,7 +19,7 @@ public class JPetTestsWithFluentAssertions {
     }
 
     @Test
-    public void deletePetFromStoreTest(){
+    public void deletePetFromStoreTest() {
         JPet testPet = new JPet(null, "Pet_" + RandomStringUtils.randomAlphabetic(8), RandomStringUtils.randomNumeric(8), null, null, "available");
         JPetActions petAction = new JPetActions();
 

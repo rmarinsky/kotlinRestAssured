@@ -23,9 +23,9 @@ class JPetActions {
     }
 
     JPet addNewPet(JPet petRequest) {
-            return given(requestSpecification)
-                    .body(petRequest)
-                    .post().as(JPet.class);
+        return given(requestSpecification)
+                .body(petRequest)
+                .post().as(JPet.class);
     }
 
     void deletePet(JPet pet) {
