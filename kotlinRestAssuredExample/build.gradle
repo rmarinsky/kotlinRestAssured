@@ -32,6 +32,7 @@ dependencies {
             "org.jetbrains.kotlin:kotlin-reflect:${kotlin_version}",
             "junit:junit:${junitVer}",
             "io.rest-assured:rest-assured:${restAssuredVer}",
+            "com.fasterxml.jackson.module:jackson-module-kotlin:${jacksonVer}",
             "org.amshove.kluent:kluent:${kluentVer}"
     )
 }
