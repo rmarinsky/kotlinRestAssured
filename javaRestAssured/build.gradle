@@ -1,0 +1,40 @@
+group 'kotlinRestAssured'
+version '1.2'
+
+//Generator for asserts
+//Comment all this block if you rewrite some part of generated any class
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "gradle.plugin.com.github.opengl-8080:assertjGen-gradle-plugin:1.1.4"
+    }
+}
+
+apply plugin: "com.github.opengl-BOBO.assertjGen"
+
+assertjGen {
+    classOrPackageNames = ['io.swagger.petstore.jEntities'] //package path for converting it to following outputDir
+    outputDir = 'src/main/java/io/swagger/petstore/asserts' //dir were will be located assertions for entities class
+    cleanOnlyFiles = true
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile(
+            "junit:junit:4.12",
+            "io.rest-assured:rest-assured:3.0.3",
+            "org.assertj:assertj-core:3.8.0"
+    )
+}

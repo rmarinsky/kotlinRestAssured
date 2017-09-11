@@ -1,2 +1,4 @@
 rootProject.name = 'kotlinRestAssured'
+include 'javaRestAssured'
+include 'kotlinRestAssuredExample'
 
