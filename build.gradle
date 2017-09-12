@@ -2,3 +2,21 @@ group 'kotlinRestAssured'
 version '1.2'
 
 apply plugin: 'idea'
+
+allprojects {
+    group 'kotlinRestAssured'
+    version '1.2'
+
+    apply plugin: 'idea'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile(
+                "junit:junit:4.12",
+                "io.rest-assured:rest-assured:3.0.3"
+        )
+    }
+}
