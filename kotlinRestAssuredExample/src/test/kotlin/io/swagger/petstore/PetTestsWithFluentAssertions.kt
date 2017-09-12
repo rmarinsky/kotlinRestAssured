@@ -14,7 +14,7 @@ class PetTestsWithFluentAssertions {
 
         val petResponse = PetActions().addNewPet(testPet)
 
-        testPet shouldEqual petResponse
+        petResponse shouldEqual testPet
     }
 
     @Test fun `Delete pet from store test`() {
