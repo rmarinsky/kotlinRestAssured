@@ -1,12 +1,7 @@
 group 'kotlinRestAssured'
 version '1.2'
 
-apply plugin: 'idea'
-
 allprojects {
-    group 'kotlinRestAssured'
-    version '1.2'
-
     apply plugin: 'idea'
 
     repositories {
