@@ -22,7 +22,7 @@ class PetTestsInObjectStyle {
                             name = "Pet_${RandomStringUtils.randomAlphabetic(8)}",
                             status = "available")
 
-        with(PetActions()) {
+        PetActions().apply {
             //with instance of KPetActions class call following methods:
             addNewPet(testPet)
             deletePet(testPet)
