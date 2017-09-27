@@ -1,15 +1,20 @@
 group 'kotlinRestAssured'
 version '1.2'
 
-allprojects {
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.1'
+}
+
+subprojects {
     apply plugin: 'idea'
+    apply plugin: 'java'
 
     repositories {
-        mavenCentral()
+        jcenter()
     }
 
     dependencies {
-        compile(
+        testCompile (
                 "junit:junit:4.12",
                 "io.rest-assured:rest-assured:3.0.3"
         )
