@@ -1,7 +1,7 @@
 package io.swagger.petstore;
 
-import io.swagger.petstore.asserts.MessageResponseAssert;
-import io.swagger.petstore.asserts.PetAssert;
+import io.swagger.petstore.asserts.JMessageResponseAssert;
+import io.swagger.petstore.asserts.JPetAssert;
 import io.swagger.petstore.jEntities.JMessageResponse;
 import io.swagger.petstore.jEntities.JPet;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -19,7 +19,7 @@ public class PetTestsWithFluentAssertions {
 
         JPet petResponse = new PetActions().addNewPet(testPet);
 
-        PetAssert.assertThat(petResponse).isEqualTo(testPet);
+        JPetAssert.assertThat(petResponse).isEqualTo(testPet);
     }
 
     @Test
@@ -36,7 +36,7 @@ public class PetTestsWithFluentAssertions {
 
         JMessageResponse messageResponse = petAction.getAbsentPet(testPet);
 
-        MessageResponseAssert.assertThat(messageResponse).hasMessage("Pet not found");
+        JMessageResponseAssert.assertThat(messageResponse).hasMessage("Pet not found");
     }
 
 }

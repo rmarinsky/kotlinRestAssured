@@ -2,6 +2,8 @@ package io.swagger.petstore;
 
 import io.restassured.http.ContentType;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
@@ -31,9 +33,9 @@ public class PetTestsInRawStyle {
                 .header("api_key", apiKeyValue)
                 .post("/pet")
                 .then()
-                .body("name", equalTo(testPetName))
+                .body("name", CoreMatchers.equalTo(testPetName))
                 .and()
-                .body("id", equalTo(testPetId));
+                .body("id", Matchers.hasToString(testPetId));
     }
 
     @Test
