@@ -16,7 +16,7 @@ public class PetTestsInObjectStyle {
                 null, null,
                 "available"); //Pet status
 
-        JPet petResponse = new PetActions().addNewPet(testPet);
+        JPet petResponse = new JPetActions().addNewPet(testPet);
         Assert.assertEquals(testPet, petResponse);
     }
 
@@ -28,12 +28,11 @@ public class PetTestsInObjectStyle {
                 null, null,
                 "available"); //Pet status
 
-        PetActions petAction = new PetActions();
-
+        JPetActions petAction = new JPetActions();
         petAction.addNewPet(testPet);
         petAction.deletePet(testPet);
 
-        JMessageResponse messageResponse = petAction.getAbsentPet(testPet);
+        JMessageResponse messageResponse = petAction.getPet(testPet);
 
         Assert.assertTrue(messageResponse.getMessage().equals("Pet not found"));
     }

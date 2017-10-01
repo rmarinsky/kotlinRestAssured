@@ -9,11 +9,11 @@ import io.swagger.petstore.jEntities.JPet;
 
 import static io.restassured.RestAssured.given;
 
-class PetActions {
+class JPetActions {
 
     private RequestSpecification requestSpecification;
 
-    PetActions() {
+    JPetActions() {
         requestSpecification = new RequestSpecBuilder()
                 .addHeader("api_key", "1qa2ws3ed4rfvcxz")
                 .setBaseUri("http://petstore.swagger.io")
@@ -33,7 +33,7 @@ class PetActions {
                 .delete(pet.getId());
     }
 
-    JMessageResponse getAbsentPet(JPet pet) {
+    JMessageResponse getPet(JPet pet) {
         return given(requestSpecification)
                 .get(pet.getId())
                 .then()

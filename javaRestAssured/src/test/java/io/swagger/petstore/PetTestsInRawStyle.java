@@ -1,5 +1,6 @@
 package io.swagger.petstore;
 
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.hamcrest.CoreMatchers;
@@ -20,7 +21,7 @@ public class PetTestsInRawStyle {
                 testPetName = "Pet_" + RandomStringUtils.randomAlphabetic(10);
 
         //Add new pet to the store
-        given().baseUri(BASE_URL)
+        RestAssured.given().baseUri(BASE_URL)
                 .log().everything()
                 .contentType(ContentType.JSON)
                 .body("{\n" +

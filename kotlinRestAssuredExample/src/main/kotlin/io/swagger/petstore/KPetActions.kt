@@ -5,11 +5,11 @@ import io.restassured.builder.RequestSpecBuilder
 import io.restassured.filter.log.LogDetail
 import io.restassured.http.ContentType
 import io.restassured.specification.RequestSpecification
-import io.swagger.petstore.kEntities.MessageResopnse
-import io.swagger.petstore.kEntities.Pet
+import io.swagger.petstore.kEntities.KMessageResopnse
+import io.swagger.petstore.kEntities.KPet
 import utils.As
 
-class PetActions {
+class KPetActions {
 
     private var requestSpecification: RequestSpecification? = null
 
@@ -22,18 +22,18 @@ class PetActions {
                 .log(LogDetail.ALL).build()
     }
 
-    fun addNewPet(pet: Pet): Pet {
+    fun addNewPet(pet: KPet): KPet {
         return RestAssured.given(requestSpecification)
                 .body(pet)
                 .post().As()
     }
 
-    fun deletePet(pet: Pet) {
+    fun deletePet(pet: KPet) {
         RestAssured.given(requestSpecification)
                 .delete(pet.id)
     }
 
-    fun getAbsentPet(pet: Pet): MessageResopnse {
+    fun getPet(pet: KPet): KMessageResopnse {
         return RestAssured.given(requestSpecification)
                 .get(pet.id)
                 .then()

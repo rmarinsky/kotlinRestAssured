@@ -17,7 +17,7 @@ public class PetTestsWithFluentAssertions {
                 null, null,
                 "available"); //Pet status
 
-        JPet petResponse = new PetActions().addNewPet(testPet);
+        JPet petResponse = new JPetActions().addNewPet(testPet);
 
         JPetAssert.assertThat(petResponse).isEqualTo(testPet);
     }
@@ -29,12 +29,12 @@ public class PetTestsWithFluentAssertions {
                 RandomStringUtils.randomNumeric(8), null, null, //Pet ID
                 "available"); //Pet status
 
-        PetActions petAction = new PetActions();
+        JPetActions petAction = new JPetActions();
 
         petAction.addNewPet(testPet);
         petAction.deletePet(testPet);
 
-        JMessageResponse messageResponse = petAction.getAbsentPet(testPet);
+        JMessageResponse messageResponse = petAction.getPet(testPet);
 
         JMessageResponseAssert.assertThat(messageResponse).hasMessage("Pet not found");
     }
