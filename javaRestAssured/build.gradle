@@ -1,5 +1,3 @@
-//Generator for asserts
-//Comment all this block if you rewrite some part of generated any class
 buildscript {
     repositories {
         maven {
@@ -13,11 +11,11 @@ buildscript {
 
 apply plugin: "com.github.opengl-BOBO.assertjGen"
 
-/*assertjGen {
+assertjGen {
     classOrPackageNames = ['io.swagger.petstore.jEntities'] //package path for converting it to following outputDir
     outputDir = 'src/main/java/io/swagger/petstore/asserts' //dir were will be located assertions for entities class
     cleanOnlyFiles = true
-}*/
+}
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -26,3 +24,5 @@ dependencies {
     compile "org.assertj:assertj-core:3.8.0"
     compile 'com.fasterxml.jackson.core:jackson-databind:2.9.0'
 }
+
+compileTestJava.dependsOn.remove("assertjGen") //кemove it if you want to upodate or create assertion classes
