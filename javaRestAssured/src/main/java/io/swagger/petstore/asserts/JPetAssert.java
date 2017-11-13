@@ -12,280 +12,292 @@ import org.assertj.core.util.Objects;
  */
 public class JPetAssert extends AbstractAssert<JPetAssert, JPet> {
 
-  /**
-   * Creates a new <code>{@link JPetAssert}</code> to make assertions on actual JPet.
-   * @param actual the JPet we want to make assertions on.
-   */
-  private JPetAssert(JPet actual) {
-    super(actual, JPetAssert.class);
-  }
-
-  /**
-   * An entry point for JPetAssert to follow AssertJ standard <code>assertThat()</code> statements.<br>
-   * With a static import, one can write directly: <code>assertThat(myJPet)</code> and get specific assertion with code completion.
-   * @param actual the JPet we want to make assertions on.
-   * @return a new <code>{@link JPetAssert}</code>
-   */
-  public static JPetAssert assertThat(JPet actual) {
-    return new JPetAssert(actual);
-  }
-
-  /**
-   * Verifies that the actual JPet's category is equal to the given one.
-   * @param category the given category to compare the actual JPet's category to.
-   * @return this assertion object.
-   * @throws AssertionError - if the actual JPet's category is not equal to the given one.
-   */
-  public JPetAssert hasCategory(JCategory category) {
-    // check that actual JPet we want to make assertions on is not null.
-    isNotNull();
-
-    // overrides the default error message with a more explicit one
-    String assertjErrorMessage = "\nExpecting category of:\n  <%s>\nto be:\n  <%s>\nbut was:\n  <%s>";
-    
-    // null safe check
-    JCategory actualCategory = actual.getCategory();
-    if (!Objects.areEqual(actualCategory, category)) {
-      failWithMessage(assertjErrorMessage, actual, category, actualCategory);
+    /**
+     * Creates a new <code>{@link JPetAssert}</code> to make assertions on actual JPet.
+     *
+     * @param actual the JPet we want to make assertions on.
+     */
+    private JPetAssert(JPet actual) {
+        super(actual, JPetAssert.class);
     }
 
-    // return the current assertion for method chaining
-    return this;
-  }
-
-  /**
-   * Verifies that the actual JPet's id is equal to the given one.
-   * @param id the given id to compare the actual JPet's id to.
-   * @return this assertion object.
-   * @throws AssertionError - if the actual JPet's id is not equal to the given one.
-   */
-  public JPetAssert hasId(String id) {
-    // check that actual JPet we want to make assertions on is not null.
-    isNotNull();
-
-    // overrides the default error message with a more explicit one
-    String assertjErrorMessage = "\nExpecting id of:\n  <%s>\nto be:\n  <%s>\nbut was:\n  <%s>";
-    
-    // null safe check
-    String actualId = actual.getId();
-    if (!Objects.areEqual(actualId, id)) {
-      failWithMessage(assertjErrorMessage, actual, id, actualId);
+    /**
+     * An entry point for JPetAssert to follow AssertJ standard <code>assertThat()</code> statements.<br>
+     * With a static import, one can write directly: <code>assertThat(myJPet)</code> and get specific assertion with code completion.
+     *
+     * @param actual the JPet we want to make assertions on.
+     * @return a new <code>{@link JPetAssert}</code>
+     */
+    public static JPetAssert assertThat(JPet actual) {
+        return new JPetAssert(actual);
     }
 
-    // return the current assertion for method chaining
-    return this;
-  }
+    /**
+     * Verifies that the actual JPet's category is equal to the given one.
+     *
+     * @param category the given category to compare the actual JPet's category to.
+     * @return this assertion object.
+     * @throws AssertionError - if the actual JPet's category is not equal to the given one.
+     */
+    public JPetAssert hasCategory(JCategory category) {
+        // check that actual JPet we want to make assertions on is not null.
+        isNotNull();
 
-  /**
-   * Verifies that the actual JPet's name is equal to the given one.
-   * @param name the given name to compare the actual JPet's name to.
-   * @return this assertion object.
-   * @throws AssertionError - if the actual JPet's name is not equal to the given one.
-   */
-  public JPetAssert hasName(String name) {
-    // check that actual JPet we want to make assertions on is not null.
-    isNotNull();
+        // overrides the default error message with a more explicit one
+        String assertjErrorMessage = "\nExpecting category of:\n  <%s>\nto be:\n  <%s>\nbut was:\n  <%s>";
 
-    // overrides the default error message with a more explicit one
-    String assertjErrorMessage = "\nExpecting name of:\n  <%s>\nto be:\n  <%s>\nbut was:\n  <%s>";
-    
-    // null safe check
-    String actualName = actual.getName();
-    if (!Objects.areEqual(actualName, name)) {
-      failWithMessage(assertjErrorMessage, actual, name, actualName);
+        // null safe check
+        JCategory actualCategory = actual.getCategory();
+        if (!Objects.areEqual(actualCategory, category)) {
+            failWithMessage(assertjErrorMessage, actual, category, actualCategory);
+        }
+
+        // return the current assertion for method chaining
+        return this;
     }
 
-    // return the current assertion for method chaining
-    return this;
-  }
+    /**
+     * Verifies that the actual JPet's id is equal to the given one.
+     *
+     * @param id the given id to compare the actual JPet's id to.
+     * @return this assertion object.
+     * @throws AssertionError - if the actual JPet's id is not equal to the given one.
+     */
+    public JPetAssert hasId(String id) {
+        // check that actual JPet we want to make assertions on is not null.
+        isNotNull();
 
-  /**
-   * Verifies that the actual JPet's photoUrls contains the given String elements.
-   * @param photoUrls the given elements that should be contained in actual JPet's photoUrls.
-   * @return this assertion object.
-   * @throws AssertionError if the actual JPet's photoUrls does not contain all given String elements.
-   */
-  public JPetAssert hasPhotoUrls(String... photoUrls) {
-    // check that actual JPet we want to make assertions on is not null.
-    isNotNull();
+        // overrides the default error message with a more explicit one
+        String assertjErrorMessage = "\nExpecting id of:\n  <%s>\nto be:\n  <%s>\nbut was:\n  <%s>";
 
-    // check that given String varargs is not null.
-    if (photoUrls == null) failWithMessage("Expecting photoUrls parameter not to be null.");
-    
-    // check with standard error message, to set another message call: info.overridingErrorMessage("my error message");
-    Iterables.instance().assertContains(info, actual.getPhotoUrls(), photoUrls);
+        // null safe check
+        String actualId = actual.getId();
+        if (!Objects.areEqual(actualId, id)) {
+            failWithMessage(assertjErrorMessage, actual, id, actualId);
+        }
 
-    // return the current assertion for method chaining
-    return this;
-  }
-
-  /**
-   * Verifies that the actual JPet's photoUrls contains <b>only<b> the given String elements and nothing else in whatever order.
-   * @param photoUrls the given elements that should be contained in actual JPet's photoUrls.
-   * @return this assertion object.
-   * @throws AssertionError if the actual JPet's photoUrls does not contain all given String elements.
-   */
-  public JPetAssert hasOnlyPhotoUrls(String... photoUrls) {
-    // check that actual JPet we want to make assertions on is not null.
-    isNotNull();
-
-    // check that given String varargs is not null.
-    if (photoUrls == null) failWithMessage("Expecting photoUrls parameter not to be null.");
-    
-    // check with standard error message, to set another message call: info.overridingErrorMessage("my error message");
-    Iterables.instance().assertContainsOnly(info, actual.getPhotoUrls(), photoUrls);
-
-    // return the current assertion for method chaining
-    return this;
-  }
-
-  /**
-   * Verifies that the actual JPet's photoUrls does not contain the given String elements.
-   *
-   * @param photoUrls the given elements that should not be in actual JPet's photoUrls.
-   * @return this assertion object.
-   * @throws AssertionError if the actual JPet's photoUrls contains any given String elements.
-   */
-  public JPetAssert doesNotHavePhotoUrls(String... photoUrls) {
-    // check that actual JPet we want to make assertions on is not null.
-    isNotNull();
-
-    // check that given String varargs is not null.
-    if (photoUrls == null) failWithMessage("Expecting photoUrls parameter not to be null.");
-    
-    // check with standard error message (use overridingErrorMessage before contains to set your own message).
-    Iterables.instance().assertDoesNotContain(info, actual.getPhotoUrls(), photoUrls);
-
-    // return the current assertion for method chaining
-    return this;
-  }
-
-  /**
-   * Verifies that the actual JPet has no photoUrls.
-   * @return this assertion object.
-   * @throws AssertionError if the actual JPet's photoUrls is not empty.
-   */
-  public JPetAssert hasNoPhotoUrls() {
-    // check that actual JPet we want to make assertions on is not null.
-    isNotNull();
-
-    // we override the default error message with a more explicit one
-    String assertjErrorMessage = "\nExpecting :\n  <%s>\nnot to have photoUrls but had :\n  <%s>";
-    
-    // check
-    if (actual.getPhotoUrls().iterator().hasNext()) {
-      failWithMessage(assertjErrorMessage, actual, actual.getPhotoUrls());
-    }
-    
-    // return the current assertion for method chaining
-    return this;
-  }
-  
-
-  /**
-   * Verifies that the actual JPet's status is equal to the given one.
-   * @param status the given status to compare the actual JPet's status to.
-   * @return this assertion object.
-   * @throws AssertionError - if the actual JPet's status is not equal to the given one.
-   */
-  public JPetAssert hasStatus(String status) {
-    // check that actual JPet we want to make assertions on is not null.
-    isNotNull();
-
-    // overrides the default error message with a more explicit one
-    String assertjErrorMessage = "\nExpecting status of:\n  <%s>\nto be:\n  <%s>\nbut was:\n  <%s>";
-    
-    // null safe check
-    String actualStatus = actual.getStatus();
-    if (!Objects.areEqual(actualStatus, status)) {
-      failWithMessage(assertjErrorMessage, actual, status, actualStatus);
+        // return the current assertion for method chaining
+        return this;
     }
 
-    // return the current assertion for method chaining
-    return this;
-  }
+    /**
+     * Verifies that the actual JPet's name is equal to the given one.
+     *
+     * @param name the given name to compare the actual JPet's name to.
+     * @return this assertion object.
+     * @throws AssertionError - if the actual JPet's name is not equal to the given one.
+     */
+    public JPetAssert hasName(String name) {
+        // check that actual JPet we want to make assertions on is not null.
+        isNotNull();
 
-  /**
-   * Verifies that the actual JPet's tags contains the given JTag elements.
-   * @param tags the given elements that should be contained in actual JPet's tags.
-   * @return this assertion object.
-   * @throws AssertionError if the actual JPet's tags does not contain all given JTag elements.
-   */
-  public JPetAssert hasTags(JTag... tags) {
-    // check that actual JPet we want to make assertions on is not null.
-    isNotNull();
+        // overrides the default error message with a more explicit one
+        String assertjErrorMessage = "\nExpecting name of:\n  <%s>\nto be:\n  <%s>\nbut was:\n  <%s>";
 
-    // check that given JTag varargs is not null.
-    if (tags == null) failWithMessage("Expecting tags parameter not to be null.");
-    
-    // check with standard error message, to set another message call: info.overridingErrorMessage("my error message");
-    Iterables.instance().assertContains(info, actual.getTags(), tags);
+        // null safe check
+        String actualName = actual.getName();
+        if (!Objects.areEqual(actualName, name)) {
+            failWithMessage(assertjErrorMessage, actual, name, actualName);
+        }
 
-    // return the current assertion for method chaining
-    return this;
-  }
-
-  /**
-   * Verifies that the actual JPet's tags contains <b>only<b> the given JTag elements and nothing else in whatever order.
-   * @param tags the given elements that should be contained in actual JPet's tags.
-   * @return this assertion object.
-   * @throws AssertionError if the actual JPet's tags does not contain all given JTag elements.
-   */
-  public JPetAssert hasOnlyTags(JTag... tags) {
-    // check that actual JPet we want to make assertions on is not null.
-    isNotNull();
-
-    // check that given JTag varargs is not null.
-    if (tags == null) failWithMessage("Expecting tags parameter not to be null.");
-    
-    // check with standard error message, to set another message call: info.overridingErrorMessage("my error message");
-    Iterables.instance().assertContainsOnly(info, actual.getTags(), tags);
-
-    // return the current assertion for method chaining
-    return this;
-  }
-
-  /**
-   * Verifies that the actual JPet's tags does not contain the given JTag elements.
-   *
-   * @param tags the given elements that should not be in actual JPet's tags.
-   * @return this assertion object.
-   * @throws AssertionError if the actual JPet's tags contains any given JTag elements.
-   */
-  public JPetAssert doesNotHaveTags(JTag... tags) {
-    // check that actual JPet we want to make assertions on is not null.
-    isNotNull();
-
-    // check that given JTag varargs is not null.
-    if (tags == null) failWithMessage("Expecting tags parameter not to be null.");
-    
-    // check with standard error message (use overridingErrorMessage before contains to set your own message).
-    Iterables.instance().assertDoesNotContain(info, actual.getTags(), tags);
-
-    // return the current assertion for method chaining
-    return this;
-  }
-
-  /**
-   * Verifies that the actual JPet has no tags.
-   * @return this assertion object.
-   * @throws AssertionError if the actual JPet's tags is not empty.
-   */
-  public JPetAssert hasNoTags() {
-    // check that actual JPet we want to make assertions on is not null.
-    isNotNull();
-
-    // we override the default error message with a more explicit one
-    String assertjErrorMessage = "\nExpecting :\n  <%s>\nnot to have tags but had :\n  <%s>";
-    
-    // check
-    if (actual.getTags().iterator().hasNext()) {
-      failWithMessage(assertjErrorMessage, actual, actual.getTags());
+        // return the current assertion for method chaining
+        return this;
     }
-    
-    // return the current assertion for method chaining
-    return this;
-  }
-  
+
+    /**
+     * Verifies that the actual JPet's photoUrls contains the given String elements.
+     *
+     * @param photoUrls the given elements that should be contained in actual JPet's photoUrls.
+     * @return this assertion object.
+     * @throws AssertionError if the actual JPet's photoUrls does not contain all given String elements.
+     */
+    public JPetAssert hasPhotoUrls(String... photoUrls) {
+        // check that actual JPet we want to make assertions on is not null.
+        isNotNull();
+
+        // check that given String varargs is not null.
+        if (photoUrls == null) failWithMessage("Expecting photoUrls parameter not to be null.");
+
+        // check with standard error message, to set another message call: info.overridingErrorMessage("my error message");
+        Iterables.instance().assertContains(info, actual.getPhotoUrls(), photoUrls);
+
+        // return the current assertion for method chaining
+        return this;
+    }
+
+    /**
+     * Verifies that the actual JPet's photoUrls contains <b>only<b> the given String elements and nothing else in whatever order.
+     *
+     * @param photoUrls the given elements that should be contained in actual JPet's photoUrls.
+     * @return this assertion object.
+     * @throws AssertionError if the actual JPet's photoUrls does not contain all given String elements.
+     */
+    public JPetAssert hasOnlyPhotoUrls(String... photoUrls) {
+        // check that actual JPet we want to make assertions on is not null.
+        isNotNull();
+
+        // check that given String varargs is not null.
+        if (photoUrls == null) failWithMessage("Expecting photoUrls parameter not to be null.");
+
+        // check with standard error message, to set another message call: info.overridingErrorMessage("my error message");
+        Iterables.instance().assertContainsOnly(info, actual.getPhotoUrls(), photoUrls);
+
+        // return the current assertion for method chaining
+        return this;
+    }
+
+    /**
+     * Verifies that the actual JPet's photoUrls does not contain the given String elements.
+     *
+     * @param photoUrls the given elements that should not be in actual JPet's photoUrls.
+     * @return this assertion object.
+     * @throws AssertionError if the actual JPet's photoUrls contains any given String elements.
+     */
+    public JPetAssert doesNotHavePhotoUrls(String... photoUrls) {
+        // check that actual JPet we want to make assertions on is not null.
+        isNotNull();
+
+        // check that given String varargs is not null.
+        if (photoUrls == null) failWithMessage("Expecting photoUrls parameter not to be null.");
+
+        // check with standard error message (use overridingErrorMessage before contains to set your own message).
+        Iterables.instance().assertDoesNotContain(info, actual.getPhotoUrls(), photoUrls);
+
+        // return the current assertion for method chaining
+        return this;
+    }
+
+    /**
+     * Verifies that the actual JPet has no photoUrls.
+     *
+     * @return this assertion object.
+     * @throws AssertionError if the actual JPet's photoUrls is not empty.
+     */
+    public JPetAssert hasNoPhotoUrls() {
+        // check that actual JPet we want to make assertions on is not null.
+        isNotNull();
+
+        // we override the default error message with a more explicit one
+        String assertjErrorMessage = "\nExpecting :\n  <%s>\nnot to have photoUrls but had :\n  <%s>";
+
+        // check
+        if (actual.getPhotoUrls().iterator().hasNext()) {
+            failWithMessage(assertjErrorMessage, actual, actual.getPhotoUrls());
+        }
+
+        // return the current assertion for method chaining
+        return this;
+    }
+
+
+    /**
+     * Verifies that the actual JPet's status is equal to the given one.
+     *
+     * @param status the given status to compare the actual JPet's status to.
+     * @return this assertion object.
+     * @throws AssertionError - if the actual JPet's status is not equal to the given one.
+     */
+    public JPetAssert hasStatus(String status) {
+        // check that actual JPet we want to make assertions on is not null.
+        isNotNull();
+
+        // overrides the default error message with a more explicit one
+        String assertjErrorMessage = "\nExpecting status of:\n  <%s>\nto be:\n  <%s>\nbut was:\n  <%s>";
+
+        // null safe check
+        String actualStatus = actual.getStatus();
+        if (!Objects.areEqual(actualStatus, status)) {
+            failWithMessage(assertjErrorMessage, actual, status, actualStatus);
+        }
+
+        // return the current assertion for method chaining
+        return this;
+    }
+
+    /**
+     * Verifies that the actual JPet's tags contains the given JTag elements.
+     *
+     * @param tags the given elements that should be contained in actual JPet's tags.
+     * @return this assertion object.
+     * @throws AssertionError if the actual JPet's tags does not contain all given JTag elements.
+     */
+    public JPetAssert hasTags(JTag... tags) {
+        // check that actual JPet we want to make assertions on is not null.
+        isNotNull();
+
+        // check that given JTag varargs is not null.
+        if (tags == null) failWithMessage("Expecting tags parameter not to be null.");
+
+        // check with standard error message, to set another message call: info.overridingErrorMessage("my error message");
+        Iterables.instance().assertContains(info, actual.getTags(), tags);
+
+        // return the current assertion for method chaining
+        return this;
+    }
+
+    /**
+     * Verifies that the actual JPet's tags contains <b>only<b> the given JTag elements and nothing else in whatever order.
+     *
+     * @param tags the given elements that should be contained in actual JPet's tags.
+     * @return this assertion object.
+     * @throws AssertionError if the actual JPet's tags does not contain all given JTag elements.
+     */
+    public JPetAssert hasOnlyTags(JTag... tags) {
+        // check that actual JPet we want to make assertions on is not null.
+        isNotNull();
+
+        // check that given JTag varargs is not null.
+        if (tags == null) failWithMessage("Expecting tags parameter not to be null.");
+
+        // check with standard error message, to set another message call: info.overridingErrorMessage("my error message");
+        Iterables.instance().assertContainsOnly(info, actual.getTags(), tags);
+
+        // return the current assertion for method chaining
+        return this;
+    }
+
+    /**
+     * Verifies that the actual JPet's tags does not contain the given JTag elements.
+     *
+     * @param tags the given elements that should not be in actual JPet's tags.
+     * @return this assertion object.
+     * @throws AssertionError if the actual JPet's tags contains any given JTag elements.
+     */
+    public JPetAssert doesNotHaveTags(JTag... tags) {
+        // check that actual JPet we want to make assertions on is not null.
+        isNotNull();
+
+        // check that given JTag varargs is not null.
+        if (tags == null) failWithMessage("Expecting tags parameter not to be null.");
+
+        // check with standard error message (use overridingErrorMessage before contains to set your own message).
+        Iterables.instance().assertDoesNotContain(info, actual.getTags(), tags);
+
+        // return the current assertion for method chaining
+        return this;
+    }
+
+    /**
+     * Verifies that the actual JPet has no tags.
+     *
+     * @return this assertion object.
+     * @throws AssertionError if the actual JPet's tags is not empty.
+     */
+    public JPetAssert hasNoTags() {
+        // check that actual JPet we want to make assertions on is not null.
+        isNotNull();
+
+        // we override the default error message with a more explicit one
+        String assertjErrorMessage = "\nExpecting :\n  <%s>\nnot to have tags but had :\n  <%s>";
+
+        // check
+        if (actual.getTags().iterator().hasNext()) {
+            failWithMessage(assertjErrorMessage, actual, actual.getTags());
+        }
+
+        // return the current assertion for method chaining
+        return this;
+    }
+
 
 }

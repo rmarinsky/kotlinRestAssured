@@ -12,7 +12,8 @@ class PetTestsInRawStyle {
     private val BASE_URL = "http://petstore.swagger.io/v2"
     private val apiKeyValue = "1qa2ws3ed4rfvcxz"
 
-    @Test fun `Add new pet to the store`() {
+    @Test
+    fun `Add new pet to the store`() {
         val testPetId = RandomStringUtils.randomNumeric(10)
         val testPetName = "Pet_${RandomStringUtils.randomAlphabetic(8)}"
 
@@ -41,7 +42,8 @@ class PetTestsInRawStyle {
                 .body("name", CoreMatchers.equalTo(testPetName))
     }
 
-    @Test fun `Delete pet by id from store`() {
+    @Test
+    fun `Delete pet by id from store`() {
         val testPetId = RandomStringUtils.randomNumeric(10)
         val testPetName = "Pet_${RandomStringUtils.randomAlphabetic(8)}"
 

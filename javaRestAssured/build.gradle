@@ -25,4 +25,4 @@ dependencies {
     compile 'com.fasterxml.jackson.core:jackson-databind:2.9.0'
 }
 
-compileTestJava.dependsOn.remove("assertjGen") //кemove it if you want to upodate or create assertion classes
+compileTestJava.dependsOn.remove("assertjGen") //remove it if you want to upodate or create assertion classes

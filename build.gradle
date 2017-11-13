@@ -15,7 +15,7 @@ subprojects {
     }
 
     dependencies {
-        compile (
+        compile(
                 "junit:junit:4.12",
                 "io.rest-assured:rest-assured:3.0.3"
         )

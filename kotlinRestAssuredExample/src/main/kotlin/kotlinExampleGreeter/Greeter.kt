@@ -2,7 +2,7 @@ package kotlinExampleGreeter
 
 
 class Greeter(val name: String) {
-    fun greet(){
+    fun greet() {
         println("Hello, $name")
     }
 }

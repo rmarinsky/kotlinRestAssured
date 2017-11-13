@@ -30,52 +30,52 @@ public class JPet {
         this.status = status;
     }
 
-    public void setPhotoUrls(List<String> photoUrls) {
-        this.photoUrls = photoUrls;
-    }
-
     public List<String> getPhotoUrls() {
         return photoUrls;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPhotoUrls(List<String> photoUrls) {
+        this.photoUrls = photoUrls;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getId() {
         return id;
     }
 
-    public void setCategory(JCategory category) {
-        this.category = category;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public JCategory getCategory() {
         return category;
     }
 
-    public void setTags(List<JTag> tags) {
-        this.tags = tags;
+    public void setCategory(JCategory category) {
+        this.category = category;
     }
 
     public List<JTag> getTags() {
         return tags;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setTags(List<JTag> tags) {
+        this.tags = tags;
     }
 
     public String getStatus() {
         return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
