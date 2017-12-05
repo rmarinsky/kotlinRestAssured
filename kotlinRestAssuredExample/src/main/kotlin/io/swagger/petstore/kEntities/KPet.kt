@@ -1,10 +1,10 @@
 package io.swagger.petstore.kEntities
 
+
 data class KPet(
-        val photoUrls: List<String?>? = null,
-        var name: String? = null,
-        var id: String? = null,
-        val category: KCategory? = null,
-        val tags: List<KTag?>? = null,
-        var status: String? = null
+		var id: String = "", //0
+		var name: String = "", //doggie
+		var photoUrls: List<String> = listOf(),
+		var tags: List<Any> = listOf(),
+		var status: String = "" //available
 )

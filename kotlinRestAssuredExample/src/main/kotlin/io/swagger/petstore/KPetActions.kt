@@ -4,7 +4,7 @@ import io.restassured.RestAssured
 import io.restassured.builder.RequestSpecBuilder
 import io.restassured.filter.log.LogDetail
 import io.restassured.http.ContentType
-import io.swagger.petstore.kEntities.KMessageResopnse
+import io.swagger.petstore.kEntities.KMessageResponse
 import io.swagger.petstore.kEntities.KPet
 import utils.As
 
@@ -30,15 +30,11 @@ class KPetActions {
                 .delete(pet.id)
     }
 
-    fun getPet(pet: KPet): KMessageResopnse {
+    fun getPet(pet: KPet): KMessageResponse {
         return RestAssured.given()
                 .get(pet.id)
                 .then()
                 .extract().body().As()
     }
-
-}
-
-fun main(args: Array<String>) {
 
 }
