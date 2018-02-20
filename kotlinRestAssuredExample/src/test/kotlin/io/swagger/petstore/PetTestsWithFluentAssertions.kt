@@ -1,6 +1,7 @@
 package io.swagger.petstore
 
-import io.swagger.petstore.kEntities.KPet
+import io.swagger.petstore.controllers.KPetController
+import io.swagger.petstore.models.KPet
 import org.amshove.kluent.shouldEqual
 import org.apache.commons.lang3.RandomStringUtils
 import org.junit.Test
@@ -13,7 +14,7 @@ class PetTestsWithFluentAssertions {
                 name = "Pet_${RandomStringUtils.randomAlphabetic(8)}",
                 status = "available")
 
-        val petResponse = KPetActions().addNewPet(testPet)
+        val petResponse = KPetController().addNewPet(testPet)
 
         petResponse shouldEqual testPet
     }
@@ -24,8 +25,8 @@ class PetTestsWithFluentAssertions {
                 name = "Pet_${RandomStringUtils.randomAlphabetic(8)}",
                 status = "available")
 
-        KPetActions().apply {
-            //with instance of KPetActions class call following methods:
+        KPetController().apply {
+            //with instance of KPetController class call following methods:
             addNewPet(testPet)
             deletePet(testPet)
 

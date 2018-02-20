@@ -1,4 +1,4 @@
-package io.swagger.petstore.jEntities;
+package io.swagger.petstore.models;
 
 import java.util.List;
 import java.util.Objects;

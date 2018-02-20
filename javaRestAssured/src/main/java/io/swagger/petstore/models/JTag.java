@@ -1,6 +1,6 @@
-package io.swagger.petstore.jEntities;
+package io.swagger.petstore.models;
 
-public class JCategory {
+public class JTag {
 
     private String name;
 
@@ -25,7 +25,7 @@ public class JCategory {
     @Override
     public String toString() {
         return
-                "Category{" +
+                "TagsItem{" +
                         "name = '" + name + '\'' +
                         ",id = '" + id + '\'' +
                         "}";

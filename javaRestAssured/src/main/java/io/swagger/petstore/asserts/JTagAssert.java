@@ -1,6 +1,6 @@
 package io.swagger.petstore.asserts;
 
-import io.swagger.petstore.jEntities.JTag;
+import io.swagger.petstore.models.JTag;
 import org.assertj.core.api.AbstractAssert;
 import org.assertj.core.util.Objects;
 

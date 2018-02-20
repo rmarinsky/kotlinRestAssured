@@ -1,6 +1,6 @@
 package io.swagger.petstore.asserts;
 
-import io.swagger.petstore.jEntities.JMessageResponse;
+import io.swagger.petstore.models.JMessageResponse;
 import org.assertj.core.api.AbstractAssert;
 import org.assertj.core.util.Objects;
 

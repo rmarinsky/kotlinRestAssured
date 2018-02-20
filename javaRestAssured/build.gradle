@@ -12,7 +12,7 @@ buildscript {
 apply plugin: "com.github.opengl-BOBO.assertjGen"
 
 assertjGen {
-    classOrPackageNames = ['io.swagger.petstore.jEntities'] //package path for converting it to following outputDir
+    classOrPackageNames = ['io.swagger.petstore.controllers'] //package path for converting it to following outputDir
     outputDir = 'src/main/java/io/swagger/petstore/asserts' //dir were will be located assertions for entities class
     cleanOnlyFiles = true
 }

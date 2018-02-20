@@ -1,7 +1,8 @@
 package io.swagger.petstore;
 
-import io.swagger.petstore.jEntities.JMessageResponse;
-import io.swagger.petstore.jEntities.JPet;
+import io.swagger.petstore.controllers.JPetController;
+import io.swagger.petstore.models.JMessageResponse;
+import io.swagger.petstore.models.JPet;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Assert;
 import org.junit.Test;
@@ -16,7 +17,7 @@ public class PetTestsInObjectStyle {
                 null, null,
                 "available"); //Pet status
 
-        JPet petResponse = new JPetActions().addNewPet(testPet);
+        JPet petResponse = new JPetController().addNewPet(testPet);
         Assert.assertEquals(testPet, petResponse);
     }
 
@@ -28,7 +29,7 @@ public class PetTestsInObjectStyle {
                 null, null,
                 "available"); //Pet status
 
-        JPetActions petAction = new JPetActions();
+        JPetController petAction = new JPetController();
         petAction.addNewPet(testPet);
         petAction.deletePet(testPet);
 

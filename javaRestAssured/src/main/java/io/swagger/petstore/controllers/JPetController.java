@@ -1,19 +1,19 @@
-package io.swagger.petstore;
+package io.swagger.petstore.controllers;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
-import io.swagger.petstore.jEntities.JMessageResponse;
-import io.swagger.petstore.jEntities.JPet;
+import io.swagger.petstore.models.JMessageResponse;
+import io.swagger.petstore.models.JPet;
 
 import static io.restassured.RestAssured.given;
 
-class JPetActions {
+public class JPetController {
 
     private RequestSpecification requestSpecification;
 
-    JPetActions() {
+    public JPetController() {
         requestSpecification = new RequestSpecBuilder()
                 .addHeader("api_key", "1qa2ws3ed4rfvcxz")
                 .setBaseUri("http://petstore.swagger.io")
@@ -22,18 +22,18 @@ class JPetActions {
                 .log(LogDetail.ALL).build();
     }
 
-    JPet addNewPet(JPet petRequest) {
+    public JPet addNewPet(JPet petRequest) {
         return given(requestSpecification)
                 .body(petRequest)
                 .post().as(JPet.class);
     }
 
-    void deletePet(JPet pet) {
+    public void deletePet(JPet pet) {
         given(requestSpecification)
                 .delete(pet.getId());
     }
 
-    JMessageResponse getPet(JPet pet) {
+    public JMessageResponse getPet(JPet pet) {
         return given(requestSpecification)
                 .get(pet.getId())
                 .then()
