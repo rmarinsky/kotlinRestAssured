@@ -4,7 +4,7 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
-import io.swagger.petstore.models.JMessageResponse;
+import io.swagger.petstore.models.JMessage;
 import io.swagger.petstore.models.JPet;
 
 import static io.restassured.RestAssured.given;
@@ -33,11 +33,11 @@ public class JPetController {
                 .delete(pet.getId());
     }
 
-    public JMessageResponse getPet(JPet pet) {
+    public JMessage getPet(JPet pet) {
         return given(requestSpecification)
                 .get(pet.getId())
                 .then()
-                .extract().body().as(JMessageResponse.class);
+                .extract().body().as(JMessage.class);
     }
 
 }

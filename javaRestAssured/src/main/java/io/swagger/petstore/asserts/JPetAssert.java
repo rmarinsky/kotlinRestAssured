@@ -17,7 +17,7 @@ public class JPetAssert extends AbstractAssert<JPetAssert, JPet> {
      *
      * @param actual the JPet we want to make assertions on.
      */
-    private JPetAssert(JPet actual) {
+    public JPetAssert(JPet actual) {
         super(actual, JPetAssert.class);
     }
 

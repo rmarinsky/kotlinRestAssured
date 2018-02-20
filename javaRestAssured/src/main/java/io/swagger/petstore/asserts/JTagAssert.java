@@ -14,7 +14,7 @@ public class JTagAssert extends AbstractAssert<JTagAssert, JTag> {
      *
      * @param actual the JTag we want to make assertions on.
      */
-    private JTagAssert(JTag actual) {
+    public JTagAssert(JTag actual) {
         super(actual, JTagAssert.class);
     }
 

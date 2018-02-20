@@ -14,7 +14,7 @@ public class JCategoryAssert extends AbstractAssert<JCategoryAssert, JCategory> 
      *
      * @param actual the JCategory we want to make assertions on.
      */
-    private JCategoryAssert(JCategory actual) {
+    public JCategoryAssert(JCategory actual) {
         super(actual, JCategoryAssert.class);
     }
 

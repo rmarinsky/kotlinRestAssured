@@ -10,7 +10,7 @@ class PetTestsInObjectStyle {
 
     @Test
     fun `Add new pet to store test`() {
-        val testPet = KPet(id = RandomStringUtils.randomNumeric(10),
+        val testPet = KPet(id = RandomStringUtils.randomNumeric(10).toLong(),
                 name = "Pet_${RandomStringUtils.randomAlphabetic(8)}",
                 status = "available")
 
@@ -21,7 +21,7 @@ class PetTestsInObjectStyle {
 
     @Test
     fun `Delete pet from store test`() {
-        val testPet = KPet(id = RandomStringUtils.randomNumeric(10),
+        val testPet = KPet(id = RandomStringUtils.randomNumeric(10).toLong(),
                 name = "Pet_${RandomStringUtils.randomAlphabetic(8)}",
                 status = "available")
 

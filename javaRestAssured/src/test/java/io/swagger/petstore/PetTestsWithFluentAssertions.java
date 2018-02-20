@@ -1,9 +1,9 @@
 package io.swagger.petstore;
 
-import io.swagger.petstore.asserts.JMessageResponseAssert;
+import io.swagger.petstore.asserts.JMessageAssert;
 import io.swagger.petstore.asserts.JPetAssert;
 import io.swagger.petstore.controllers.JPetController;
-import io.swagger.petstore.models.JMessageResponse;
+import io.swagger.petstore.models.JMessage;
 import io.swagger.petstore.models.JPet;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Test;
@@ -35,9 +35,9 @@ public class PetTestsWithFluentAssertions {
         petAction.addNewPet(testPet);
         petAction.deletePet(testPet);
 
-        JMessageResponse messageResponse = petAction.getPet(testPet);
+        JMessage messageResponse = petAction.getPet(testPet);
 
-        JMessageResponseAssert.assertThat(messageResponse).hasMessage("Pet not found");
+        JMessageAssert.assertThat(messageResponse).hasMessage("Pet not found");
     }
 
 }

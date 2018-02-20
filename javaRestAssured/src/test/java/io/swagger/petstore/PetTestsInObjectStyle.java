@@ -1,7 +1,7 @@
 package io.swagger.petstore;
 
 import io.swagger.petstore.controllers.JPetController;
-import io.swagger.petstore.models.JMessageResponse;
+import io.swagger.petstore.models.JMessage;
 import io.swagger.petstore.models.JPet;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Assert;
@@ -33,7 +33,7 @@ public class PetTestsInObjectStyle {
         petAction.addNewPet(testPet);
         petAction.deletePet(testPet);
 
-        JMessageResponse messageResponse = petAction.getPet(testPet);
+        JMessage messageResponse = petAction.getPet(testPet);
 
         Assert.assertTrue(messageResponse.getMessage().equals("Pet not found"));
     }

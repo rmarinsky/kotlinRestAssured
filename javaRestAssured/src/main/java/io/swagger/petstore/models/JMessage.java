@@ -1,6 +1,6 @@
 package io.swagger.petstore.models;
 
-public class JMessageResponse {
+public class JMessage {
     private int code;
     private String type;
     private String message;
@@ -32,7 +32,7 @@ public class JMessageResponse {
     @Override
     public String toString() {
         return
-                "JMessageResponse{" +
+                "JMessage{" +
                         "code = '" + code + '\'' +
                         ",type = '" + type + '\'' +
                         ",message = '" + message + '\'' +
