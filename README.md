@@ -1,5 +1,5 @@
 # kotlinRestAssured
-Project that illustarete how Kotlin simplifyies API tests
+Project that illustrate how Kotlin simplifyies API tests
 
 [Kotlin idioms](https://kotlinlang.org/docs/reference/idioms.html) \
 [Kotlin for grumpy developers](https://medium.com/@Pinterest_Engineering/kotlin-for-grumpy-java-developers-8e90875cb6ab) \
@@ -10,3 +10,7 @@ Project that illustarete how Kotlin simplifyies API tests
 [roboPOJOGenerator plugin](https://github.com/robohorse/RoboPOJOGenerator) \
 [assertjGen gradle plugin](https://github.com/opengl-8080/assertjGen-gradle-plugin)
 
+Perhaps the best to study courses:\
+[Introduction to Kotlin «O\`Really»](http://shop.oreilly.com/product/0636920052982.do) \
+[Advanced Kotlin «O\`Really»](http://shop.oreilly.com/product/0636920052999.do) \
+[Kotlin for Begginers «Udemy»](https://www.udemy.com/kotlin-course/)
