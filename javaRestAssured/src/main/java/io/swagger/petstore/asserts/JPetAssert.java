@@ -1,5 +1,6 @@
 package io.swagger.petstore.asserts;
 
+
 import io.swagger.petstore.models.JCategory;
 import io.swagger.petstore.models.JPet;
 import io.swagger.petstore.models.JTag;
