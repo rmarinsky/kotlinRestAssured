@@ -18,7 +18,6 @@ ext {
 
 dependencies {
     compile(
-            "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlin_version}",
             "org.jetbrains.kotlin:kotlin-reflect:${kotlin_version}",
             "com.fasterxml.jackson.module:jackson-module-kotlin:${jacksonVer}",
             "org.amshove.kluent:kluent:${kluentVer}",
