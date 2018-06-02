@@ -1,6 +1,8 @@
 # kotlinRestAssured
 Project that illustrate how Kotlin simplifyies API tests
 
+[PRESENTATION](https://drive.google.com/open?id=1F7qY84zY4wfnniFRXeCCfYQGmmbuFFNv) \
+\
 [Kotlin idioms](https://kotlinlang.org/docs/reference/idioms.html) \
 [Kotlin for grumpy developers](https://medium.com/@Pinterest_Engineering/kotlin-for-grumpy-java-developers-8e90875cb6ab) \
 [kotlin from beginning](https://medium.com/@chintanrathod/kotlin-from-beginning-cc3c3d8682f) \

@@ -1,8 +1,8 @@
 group 'kotlinRestAssured'
-version '1.2'
+version '1.5'
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '4.1'
+    gradleVersion = '4.7'
 }
 
 subprojects {
@@ -15,9 +15,7 @@ subprojects {
     }
 
     dependencies {
-        compile(
-                "junit:junit:4.12",
-                "io.rest-assured:rest-assured:3.0.3"
-        )
+        compile 'junit:junit:4.12'
+        compile 'io.rest-assured:rest-assured:3.0.3'
     }
 }
