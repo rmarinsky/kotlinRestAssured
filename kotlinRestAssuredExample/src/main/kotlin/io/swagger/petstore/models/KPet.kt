@@ -18,6 +18,7 @@ data class KPet(
             var id: Int = 0, //0
             var name: String = "" //string
     )
+
     data class Message(
             var code: Int,
             var type: String,
