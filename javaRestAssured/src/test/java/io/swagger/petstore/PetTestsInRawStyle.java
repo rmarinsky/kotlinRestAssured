@@ -1,5 +1,9 @@
 package io.swagger.petstore;
 
+import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.when;
+import static org.hamcrest.CoreMatchers.equalTo;
+
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -7,9 +11,6 @@ import org.hamcrest.CoreMatchers;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 
-import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.when;
-import static org.hamcrest.CoreMatchers.equalTo;
 
 public class PetTestsInRawStyle {
 
@@ -75,4 +76,5 @@ public class PetTestsInRawStyle {
                 .then()
                 .body("message", equalTo("Pet not found"));
     }
+
 }

@@ -8,6 +8,7 @@ import io.swagger.petstore.models.JPet;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Test;
 
+
 public class PetTestsWithFluentAssertions {
 
     @Test

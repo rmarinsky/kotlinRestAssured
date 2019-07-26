@@ -1,6 +1,7 @@
 package io.swagger.petstore.models;
 
 public class JMessage {
+
     private int code;
     private String type;
     private String message;
@@ -38,4 +39,5 @@ public class JMessage {
                         ",message = '" + message + '\'' +
                         "}";
     }
+
 }

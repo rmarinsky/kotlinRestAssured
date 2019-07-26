@@ -30,4 +30,5 @@ public class JCategory {
                         ",id = '" + id + '\'' +
                         "}";
     }
+
 }
