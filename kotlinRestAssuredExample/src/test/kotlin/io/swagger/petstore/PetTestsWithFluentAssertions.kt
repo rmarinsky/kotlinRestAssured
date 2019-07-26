@@ -14,7 +14,7 @@ class PetTestsWithFluentAssertions {
                 name = "Pet_${RandomStringUtils.randomAlphabetic(8)}",
                 status = "available")
 
-        val petResponse = KPetController().addNewPet(testPet).let {  }
+        val petResponse = KPetController().addNewPet(testPet).let { }
 
         petResponse shouldEqual testPet
     }

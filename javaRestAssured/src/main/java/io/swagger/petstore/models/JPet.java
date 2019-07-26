@@ -3,6 +3,7 @@ package io.swagger.petstore.models;
 import java.util.List;
 import java.util.Objects;
 
+
 public class JPet {
 
     private List<String> photoUrls;
@@ -20,7 +21,8 @@ public class JPet {
     public JPet() {
     }
 
-    public JPet(List<String> photoUrls, String name, String id, JCategory category, List<JTag> tags, String status) {
+    public JPet(List<String> photoUrls, String name, String id, JCategory category, List<JTag> tags,
+            String status) {
 
         this.photoUrls = photoUrls;
         this.name = name;

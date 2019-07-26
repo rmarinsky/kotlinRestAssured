@@ -1,6 +1,7 @@
 package javaExampleGreeter;
 
 public class Greeter {
+
     private String name;
 
     public Greeter(String name) {
@@ -14,4 +15,5 @@ public class Greeter {
     public void greet() {
         System.out.println(String.format("Hello, %s!", this.name));
     }
+
 }
